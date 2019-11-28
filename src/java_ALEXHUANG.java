@@ -1,6 +1,8 @@
+// NAB Technology Internship Program - Coding Challenge
+// Completed by ALEX HUANG
 import java.util.ArrayList;
 
-public class java_ALEXHUANG {
+class java_ALEXHUANG {
 
 	public static void main(String[] args) {
 		NABTest();
@@ -12,7 +14,8 @@ public class java_ALEXHUANG {
 
 	// Determine which substrings repeat as well as how many there are
 	// eg. input: "123123" output: 6 substrings: 1,12,123,2,23,3
-	private static void NABTest() {
+	// eg. input: "abcabc" output: 6 substrings: a,ab,abc,b,bc,c
+	public static void NABTest() {
 
 		int counter = 0;
 		ArrayList<String> repArray = new ArrayList<String>();
@@ -62,5 +65,4 @@ public class java_ALEXHUANG {
 			System.out.println(counter + " substrings - " + repValues);
 		}
 	}
-
 }
