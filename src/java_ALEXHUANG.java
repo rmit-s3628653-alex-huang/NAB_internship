@@ -21,7 +21,7 @@ class java_ALEXHUANG {
 					+ "\nor 'e' to terminate program: ");
 			String NABString = keyboard.nextLine();
 
-			if (NABString.contentEquals("n")) { // default string
+			if (NABString.equals("n")) { // default string
 				NABTest(N);
 			} else if (NABString.equals("e")) { // terminate
 				System.out.println("Program Terminated");
