@@ -13,24 +13,34 @@ public class java_ALEXHUANG {
 	// Determine which substrings repeat as well as how many there are
 	// eg. input: "123123" output: 6 substrings: 1,12,123,2,23,3
 	private static void NABTest() {
+
 		int counter = 0;
 		ArrayList<String> repArray = new ArrayList<String>();
 		String tempSub;
-		String tempString;
-		for (int i = 0; i < N.length(); i++) {
-			for (int j = 1; j < N.length(); j++) {
-				if (i + j <= N.length()) {
-					tempSub = N.substring(i, i + j);
-					tempString = N;
+		String tempComp;
+		int compLength;
 
+		for (int i = 0; i < N.length(); i++) {
+			
+			for (int j = 1; j < N.length(); j++) {
+				
+				if (i + j <= N.length() && j <= N.length() / 2 && j <= N.length() - (i + j)) {
+					tempSub = N.substring(i, i + j);
+					compLength = tempSub.length();
 					// check if we've already checked this substring
-					if (repArray.contains(tempSub) == false) {
-						// remove substring from the string
-						// replace with space to prevent creation of incorrect string for comparison
-						tempString = tempString.replaceFirst(tempSub, " ");
-						if (tempString.contains(tempSub)) {
-							repArray.add(tempSub);
-							counter++;
+					
+					for (int k = i + j; k < N.length(); k++) {
+						
+						if (k + compLength <= N.length()) {
+							tempComp = N.substring(k, k + compLength);
+							
+							if (repArray.contains(tempComp) == false) {
+								
+								if (tempSub.equals(tempComp)) {
+									repArray.add(tempComp);
+									counter++;
+								}
+							}
 						}
 					}
 				}
