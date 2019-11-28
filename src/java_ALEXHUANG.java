@@ -10,6 +10,8 @@ class java_ALEXHUANG {
 
 	// N is string with the following possible conditions:
 	// (a) empty, (b) numeric, (c) non-numeric, (d) mixed , (e) case sensitive
+	// String was given 'static' keyword as java cannot make a static reference
+	// to a non-static variable
 	static String N = "abcabc";
 
 	// Determine which substrings repeat as well as how many there are
